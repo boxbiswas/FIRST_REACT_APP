@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-roboto: "Roboto Slab", serif;
+  --font-raleway: "Raleway", sans-serif;
+}
+
+body {
+  font-family: var(--font-roboto);
+  background: radial-gradient(ellipse at top left, #1b1b1b 0%, #0f0f0f 60%);
+  color: #e6e6e6;
+}
+
+.app {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: 0.9px;
+  background: linear-gradient(90deg, rgba(249, 211, 180, 1) 0%, rgba(249, 211, 180, 0) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
+  margin-bottom: 1rem;
+}
+
+.search {
+  width: 100%;
+  max-width: 880px;
+  margin: 2rem 0 1.25rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.6rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #161616, #1f2123);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+
+.search input {
+  flex: 1;
+  border: none;
+  font-size: 1.1rem;
+  font-family: var(--font-raleway);
+  font-weight: 500;
+  padding: 0.9rem 1rem;
+  border-radius: 999px;
+
+  outline: none;
+  color: #d0d0d0;
+  background: transparent;
+}
+
+.search img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.15));
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+.search img:hover {
+  transform: scale(1.06);
+}
+
+/* .search button {
+  padding: 20px 40px;
+  border-radius: 0.5rem;
+  margin-left: 15px;
+  color: #a1a1a1;
+  font-family: var(--font-raleway);
+  font-weight: 900;
+  letter-spacing: 0.75px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  background: #1f2123;
+  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+} */
+
+.empty {
+  width: 100%;
+  margin-top: 3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty h2 {
+  font-size: 1.25rem;
+  color: #f9d3b4;
+  font-family: var(--font-raleway);
+}
+
+.container {
+  width: 100%;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+  justify-items: center;
+  padding: 0 0.5rem;
+}
+
+.movie {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 2 / 3;
+  margin: 0;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: none;
+  background: #111313;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+}
+
+.movie:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.6);
+}
+
+.movie-year {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 4;
+  padding: 6px 10px;
+  background: rgba(0, 0, 0, 0.45);
+  color: #f9d3b4;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.poster {
+  width: 100%;
+  height: 100%;
+}
+
+.poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease, filter 0.35s ease;
+}
+
+.movie:hover .poster img {
+  transform: scale(1.06);
+  filter: brightness(0.72);
+}
+
+.info {
+  z-index: 6;
+  padding: 14px 16px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(7,7,7,0.7) 60%);
+}
+
+.info .type {
+  font-family: var(--font-raleway);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+.info .title {
+  margin-top: 6px;
+  font-family: var(--font-roboto);
+  color: #f9d3b4;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  max-height: 2.6rem;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 900px) {
+  .app {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .search {
+    padding: 1rem 1.75rem;
+    width: 100%;
+  }
+
+  .search input {
+    font-size: 0.95rem;
+  }
+
+  .search img {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .app {
+    padding: 2rem 0.75rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .container {
+    margin-top: 1.25rem;
+    gap: 1rem;
+  }
+
+  .movie {
+    max-width: 220px;
+  }
+}
