@@ -1,47 +1,25 @@
-﻿MoviesHub
+# MoviesHub
 
-A small React + Vite app to search movies using the OMDB API.
+A minimal React + Vite application for searching movies using the OMDB API.
 
-**Quick start**
-
-1. Install dependencies:
-
+## Quick Start
 ```bash
 npm install
-```
-
-2. Run the dev server:
-
-```bash
 npm run dev
 ```
+Open `http://localhost:5173` (or the port shown in your terminal).
 
-Open http://localhost:3000 (Vite may choose another port, check the terminal).
+## Features
+- Movie search by title
+- Dynamic card display
+- Responsive layout
 
-3. Build for production:
+## Tech Stack
+- **Framework:** React
+- **Tooling:** Vite
+- **API:** [OMDB API](http://www.omdbapi.com/)
 
-```bash
-npm run build
-```
-
-4. Preview the production build locally:
-
-```bash
-npm run preview
-```
-
-**Project notes**
-
-- This project uses Vite as the dev tooling.
-- The app queries the OMDB API; an API key is currently hard-coded in `src/App.jsx`. For production, replace it with an environment variable (e.g. `VITE_OMDB_API_KEY`) and update the code to read from `import.meta.env`.
-
-**Project structure (important files)**
-
-- `src/` — application source code
-  - `App.jsx` — main app and search logic
-  - `MovieCard.jsx` — movie card component
-  - `App.css` — styling
-- `public/index.html` — app HTML template
-- `package.json` — scripts and dependencies
-
-If you'd like, I can add an `.env` example, CI workflow, or update the README with screenshots.
+## Structure
+- `App.jsx`: Main logic and API interaction.
+- `MovieCard.jsx`: UI component for movie items.
+- `App.css`: Styles.
